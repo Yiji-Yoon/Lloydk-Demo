@@ -1,0 +1,50 @@
+services:
+  qdrant:
+    image: qdrant/qdrant
+    container_name: qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - jolly_neumann:/qdrant/storage
+
+  frontend:
+    image: demo-frontend
+    container_name: demo-frontend-dev
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+
+  backend:
+    image: demo-backend
+    container_name: demo-backend-dev
+    build: ./backend
+    environment:
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - qdrant
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - hf_cache:/root/.cache/huggingface
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    env_file:
+      - ./backend/.env
+
+# [수정 포인트] 볼륨들을 각각 독립적으로 선언해야 합니다.
+volumes:
+  jolly_neumann:
+    external: true
+  hf_cache:    # 👈 jolly_neumann과 같은 라인에 맞춰야 합니다!
+
+# docker compose up --build

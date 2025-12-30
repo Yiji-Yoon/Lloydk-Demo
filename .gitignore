@@ -1,0 +1,31 @@
+# Demo/.gitignore
+
+# 1. 모든 환경변수 (.env 파일이 어디에 있든 차단)
+.env
+.env.local
+.env.*
+
+# 2. 백엔드 관련 (Demo-test 내부)
+Demo-test/backend/__pycache__/
+Demo-test/backend/.venv/
+Demo-test/backend/qdrant_storage/
+
+# 3. 프론트엔드 관련 (Demo-test 내부)
+Demo-test/frontend/node_modules/
+Demo-test/frontend/dist/
+
+# 4. 시스템 및 편집기 파일
+.DS_Store
+.vscode/
+.idea/
+
+# --- AI & DB 관련 (용량이 크거나 개인 설정임) ---
+qdrant_storage/
+hf_cache/
+*.pyc
+__pycache__/
+.venv/
+
+# --- 추가 보안 ---
+.env.*
+!.env.example
