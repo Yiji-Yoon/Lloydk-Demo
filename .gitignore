@@ -29,4 +29,4 @@ __pycache__/
 # --- 추가 보안 ---
 .env.*
 !.env.example
--/files/
+_/files/
