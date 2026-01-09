@@ -2,13 +2,17 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from QnA import router as qna_router
 from complaint_service import router as complaint_router
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 app = FastAPI()
+frontend_url = os.getenv("FRONTEND_URL")
 
 # [CORS 설정] 리액트(5173)가 요청 보내는 것을 허락해줌
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://192.168.123.60:5173"], 
+    allow_origins=[frontend_url], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

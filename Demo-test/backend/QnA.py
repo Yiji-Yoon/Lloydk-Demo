@@ -11,9 +11,11 @@ client = ollama.Client(host=OLLAMA_HOST)
 
 
 # Qdrant 클라이언트 (로컬)
+qdrant_host = os.getenv("QDRANT_HOST")
+qdrant_api_key = os.getenv("QDRANT_API_KEY")
 client_qd = QdrantClient(
-    host=os.getenv("QDRANT_HOST", "192.168.123.60"),
-    port=int(os.getenv("QDRANT_PORT", 6333)),
+    url=qdrant_host,       # <--- 'host=' 대신 'url='을 써야 https:// 를 받아줍니다!
+    api_key=qdrant_api_key
 )
 
 

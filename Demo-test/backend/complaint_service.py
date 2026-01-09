@@ -9,8 +9,12 @@ from sentence_transformers import SentenceTransformer
 router = APIRouter()
 
 # 1. 설정값 및 클라이언트 초기화
-QDRANT_HOST = os.getenv("QDRANT_HOST", "qdrant") # 도커 네트워크 이름 사용
-QDRANT_PORT = os.getenv("QDRANT_PORT", 6333)
+qdrant_host = os.getenv("QDRANT_HOST")
+qdrant_api_key = os.getenv("QDRANT_API_KEY")
+client_qd = QdrantClient(
+    url=qdrant_host,       # <--- 'host=' 대신 'url='을 써야 https:// 를 받아줍니다!
+    api_key=qdrant_api_key
+)
 COLLECTION_NAME = "complaints"
 
 # [수정] Ollama 클라이언트 설정 (도커 밖의 호스트와 통신)
@@ -20,7 +24,6 @@ client_ollama = ollama.Client(host=OLLAMA_HOST)
 # [수정] Qwen 기반 임베딩 모델 초기화
 # trust_remote_code=True는 Qwen3 같은 최신 아키텍처를 불러올 때 필수입니다.
 embed_model = SentenceTransformer("Qwen/Qwen3-Embedding-0.6B", trust_remote_code=True)
-client_qd = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 
 # --- [핵심 로직 함수들] ---
 
