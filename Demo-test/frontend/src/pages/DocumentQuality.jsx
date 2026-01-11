@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 
 const sampleDocument = `회사 소개
-저희 회사는 2015년에 설립되었으며, 혁신적인 솔루션을 제공하고있습니다. 
+저희 회사는 2015년에 설립되었으며, 혁신적인 솔루션을 제공하고 있습니다. 
 
 주요 제품
 1. 인공지능 분석 플랫폼

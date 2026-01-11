@@ -9,4 +9,3 @@ export const manualMenus = {
     { id:"m4", category:"management", title:"부진재고 관리", icon:"chart", status:"planned", expected_date:"2026-02-01" },
   ],
 };
-

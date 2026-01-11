@@ -40,6 +40,7 @@ export default function ComplaintPage() {
 
         <h1 className="text-3xl font-bold text-slate-800 mb-2">📨 민원 자동 분류기</h1>
         <p className="text-slate-600 mb-8">민원 내용을 입력하면 AI가 담당 부서를 추천하고 유사 사례를 찾아줍니다.</p>
+        <p className="text-sm text-gray-500 mb-4">해당 데모는 국토안전관리원 민원데이터를 사용합니다.</p>
 
         <div className="grid gap-6 lg:grid-cols-2">
           {/* 입력 카드 */}

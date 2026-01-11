@@ -14,16 +14,16 @@ import remarkGfm from 'remark-gfm';
 // 샘플 질문 데이터 (클릭하면 바로 질문 입력되게 하려고 남겨둠)
 const sampleQnA = [
   {
-    question: "연차 신청은 어떻게 하나요?",
-    category: "인사",
+    question: "AI Agent에 계층구조를 적용하는 것에 대한 장점은?",
+    category: "AI Agent",
   },
   {
-    question: "업무용 소프트웨어 구매 절차는?",
-    category: "IT",
+    question: "청킹 전략이란 무엇인가?",
+    category: "전처리",
   },
   {
-    question: "경조사 휴가 일수는?",
-    category: "인사",
+    question: "할루시네이션을 막기 위한 방안은?",
+    category: "LLM",
   }
 ];
 
@@ -54,8 +54,7 @@ export default function QnAService() {
         type: 'ai',
         text: res.data.answer,
         // 백엔드에서 카테고리/점수를 안 주면 기본값 사용
-        category: res.data.category || "AI 답변", 
-        confidence: res.data.confidence || 98
+        category: res.data.category || "AI 답변"
       };
       
       setChatHistory(prev => [...prev, aiMessage]);
@@ -93,8 +92,8 @@ export default function QnAService() {
               <Sparkles className="w-8 h-8 text-blue-600" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-slate-800">Q&A 서비스</h1>
-              <p className="text-slate-600">업무 관련 질문에 AI가 즉시 답변합니다</p>
+              <h1 className="text-3xl font-bold text-slate-800">로이드케이 Q&A 서비스</h1>
+              <p className="text-slate-600">해당 챗봇은 지속적으로 업데이트 중인 로이드케이 백서를 기반으로 답변합니다.</p>
             </div>
           </div>
           <Badge className="bg-emerald-100 text-emerald-700 border-emerald-200">시연 가능</Badge>
@@ -232,7 +231,7 @@ export default function QnAService() {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-slate-600">평균 응답 시간</span>
-                    <span className="text-lg font-bold text-blue-600">0.8초</span>
+                    <span className="text-lg font-bold text-blue-600">3초</span>
                   </div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm text-slate-600">정확도</span>

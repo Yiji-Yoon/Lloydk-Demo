@@ -37,13 +37,13 @@ export default function Home() {
     queryKey: ['demos'],
     queryFn: async () => {
       try {
-        // 1. 먼저 진짜 백엔드에 노크를 해봅니다.
+        // 백엔드 API 호출
         const response = await axios.get('/api/demos');
         console.log("✅ 백엔드 연결 성공!");
         return response.data; 
 
       } catch (error) {
-        // 2. 백엔드가 꺼져있거나 에러(404)가 나면, 당황하지 않고 가짜 데이터를 씁니다.
+        // 백엔드가 꺼져있거나 에러(404)가 나면, 가짜 데이터 사용
         console.warn("⚠️ 백엔드 연결 실패 (가짜 데이터 사용):", error.message);
         return MOCK_DEMOS; 
       }

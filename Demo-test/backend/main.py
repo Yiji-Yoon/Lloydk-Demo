@@ -139,7 +139,6 @@ def get_demos():
             "status": "completed",
             "icon": "box",
             "expected_date": None,
-            # 👇 설정하신 외부 링크 (구글)
             "externalLink": "https://sec-demo.lloydk.ai/ko/owui-chat" 
         },
         {
