@@ -14,22 +14,26 @@ import Analytics from "./Analytics";
 
 import ComplaintPage from './ComplaintPage';
 
+import InsightFinder from './InsightFinder';
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
-    
+
     Home: Home,
-    
+
     QnAService: QnAService,
-    
+
     DocumentQuality: DocumentQuality,
-    
+
     ReportGenerator: ReportGenerator,
-    
+
     SlowMovingInventory: SlowMovingInventory,
-    
+
     Analytics: Analytics,
-    
+
+    InsightFinder: InsightFinder,
+
 }
 
 function _getCurrentPage(url) {
@@ -52,25 +56,27 @@ function PagesContent() {
     
     return (
         <Layout currentPageName={currentPage}>
-            <Routes>            
-                
+            <Routes>
+
                     <Route path="/" element={<Home />} />
-                
-                
+
+
                 <Route path="/Home" element={<Home />} />
-                
+
                 <Route path="/QnAService" element={<QnAService />} />
-                
+
                 <Route path="/DocumentQuality" element={<DocumentQuality />} />
-                
+
                 <Route path="/ReportGenerator" element={<ReportGenerator />} />
-                
+
                 <Route path="/SlowMovingInventory" element={<SlowMovingInventory />} />
-                
+
                 <Route path="/Analytics" element={<Analytics />} />
 
                 <Route path="/complaint" element={<ComplaintPage />} />
-                
+
+                <Route path="/InsightFinder" element={<InsightFinder />} />
+
             </Routes>
         </Layout>
     );

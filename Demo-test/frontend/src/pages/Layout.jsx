@@ -99,7 +99,8 @@ export default function Layout({ children, currentPageName }) {
                         'Q&A 서비스': 'QnAService',
                         '문서 품질 및 오류 관리': 'DocumentQuality',
                         '보고서 자동 생성': 'ReportGenerator',
-                        '민원 분류기' : 'complaint'
+                        '민원 분류기' : 'complaint',
+                        '인사이트파인더': 'InsightFinder'
                         // 외부 링크로 처리할 '부진재고...'는 여기서 굳이 매핑 안 해도 됨
                       };
                       

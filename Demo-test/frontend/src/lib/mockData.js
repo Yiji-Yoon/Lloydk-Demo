@@ -37,11 +37,12 @@ export const MOCK_DEMOS = [
   },
   {
     id: 102,
-    title: "인사이트 파인더",
+    title: "인사이트파인더",
+    description: "기업 뉴스 분석을 통한 시장 인사이트 및 전략 제안 서비스",
     category: "employee",
-    status: "in_progress",
+    status: "completed",
     icon: "search",
-    expected_date: "2025-02-01"
+    expected_date: null
   },
 
   // ==============================================

@@ -30,7 +30,8 @@ const demoPageMap = {
   'Q&A 서비스': 'QnAService',
   '문서 품질 및 오류 관리': 'DocumentQuality',
   '보고서 자동 생성': 'ReportGenerator',
-  '민원 분류기': 'complaint'
+  '민원 분류기': 'complaint',
+  '인사이트파인더': 'InsightFinder'
   // '부진재고...'는 외부 링크라서 굳이 매핑 안 해도 됨 (데이터 따라감)
 };
 

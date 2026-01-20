@@ -239,7 +239,7 @@ export default function QnAService() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-slate-600">월간 질문 수</span>
-                    <span className="text-lg font-bold text-slate-800">2,845</span>
+                    <span className="text-lg font-bold text-slate-800">1</span>
                   </div>
                 </div>
               </CardContent>
